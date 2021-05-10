@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils import timezone
 
 class Category(models.Model):
     title = models.CharField(max_length=200)
@@ -18,6 +18,7 @@ class Post(models.Model):
     title=models.CharField(max_length=200)
     thumbnail=models.ImageField(upload_to='images')
     category = models.ManyToManyField(Category, null=True)
+    created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title
