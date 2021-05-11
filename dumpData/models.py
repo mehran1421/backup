@@ -15,7 +15,7 @@ class Category(models.Model):
 
 
 class Post(models.Model):
-    title=models.CharField(max_length=200)
+    title=models.CharField(max_length=56)
     thumbnail=models.ImageField(upload_to='images')
     category = models.ManyToManyField(Category, null=True)
 

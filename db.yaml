@@ -1,0 +1,14 @@
+- model: dumpData.category
+  pk: 1
+  fields:
+    title: addd
+    slug: adel
+    status: true
+    position: 3
+- model: dumpData.post
+  pk: 1
+  fields:
+    title: mehrandldikfjwjijdfolikjolwi
+    thumbnail: images/1_WCgsBB6.jpg
+    category:
+    - 1
