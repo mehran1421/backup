@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 
+
 class Category(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=100)
