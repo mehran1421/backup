@@ -45,7 +45,16 @@ INSTALLED_APPS = [
 ]
 
 DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
-DBBACKUP_STORAGE_OPTIONS = {'location': BASE_DIR/'my-backup'}
+DBBACKUP_STORAGE_OPTIONS = {'location': BASE_DIR / 'my-backup'}
+
+DBBACKUP_CONNECTORS = {
+    'default': {
+        'USER': 'mehran',
+        'PASSWORD': '',
+        'HOST': '',
+        'EXCLUDE': 'dbBackup_test'
+    }
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
