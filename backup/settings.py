@@ -47,7 +47,7 @@ INSTALLED_APPS = [
 ]
 
 DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
-DBBACKUP_STORAGE_OPTIONS = {'location': BASE_DIR / 'my-backup'}
+DBBACKUP_STORAGE_OPTIONS = {'location': 'd://my-backup'}
 
 DBBACKUP_CONNECTORS = {
     'default': {

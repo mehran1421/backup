@@ -16,7 +16,7 @@ app.config_from_object('django.conf:settings', namespace='CELERY')
 app.conf.beat_schedule={
     'get_backup_data_30s':{
         'task':'cron.tasks.backup',
-        'schedule':24.0*60.0*60.0
+        'schedule':10
     }
 }
 
