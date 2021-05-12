@@ -43,19 +43,24 @@ INSTALLED_APPS = [
     # my app
     'dbBackup.apps.DbbackupConfig',
     'dumpData.apps.DumpdataConfig',
+    'cron.apps.CronConfig',
 ]
 
 DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
 DBBACKUP_STORAGE_OPTIONS = {'location': BASE_DIR / 'my-backup'}
 
-# DBBACKUP_CONNECTORS = {
-#     'default': {
-#         'USER': 'mehran',
-#         'PASSWORD': '',
-#         'HOST': '',
-#         'EXCLUDE': 'dbBackup_test'
-#     }
-# }
+DBBACKUP_CONNECTORS = {
+    'default': {
+        'USER': 'mehran',
+        'PASSWORD': '',
+        'HOST': '',
+        'EXCLUDE': 'dbBackup_test',
+        'CLEANUP_KEEP': 5
+    }
+}
+
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
